@@ -1,4 +1,4 @@
-#!/home/karthikeya/Projects/Hackathon/Lucors.us/pyenv/bin/python3
+#!/home/karthikeya/Projects/Hackathon/Lucros/pyenv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

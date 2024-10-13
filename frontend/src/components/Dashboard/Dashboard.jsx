@@ -6,8 +6,8 @@ import Sidebar from './partials/Sidebar';
 import Header from './partials/Header';
 import DashboardCard06 from './partials/dashboard/DashboardCard06';
 import DashboardCard07 from './partials/dashboard/DashboardCard07';
-import DashboardCard09 from './partials/dashboard/DashboardCard09';
-
+import Webull from "./Webull/Webull";
+import News from "./News/News";
 const Dashboard = ({ user, setToken, setUser }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
@@ -45,10 +45,12 @@ const Dashboard = ({ user, setToken, setUser }) => {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-12 gap-6">
-              <DashboardCard09 />
-              <DashboardCard06 />
+            <div className="grid grid-cols-8 gap-6">
+              <Webull />
               <DashboardCard07 />
+              <News/>
+              
+              
             </div>
 
           </div>
