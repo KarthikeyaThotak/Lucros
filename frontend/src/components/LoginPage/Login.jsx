@@ -8,12 +8,13 @@ const Login = ({ setToken, setUser }) => {  // Ensure these props are received
   const [error, setError] = useState("");
 
   const navigate = useNavigate(); // Hook for navigation
+  const API_SERVER = import.meta.env.VITE_REACT_APP_API_URL;
 
   const handleLogin = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login/", {
+      const response = await axios.post(`${API_SERVER}/api/login/`, {
         username,
         password,
       });
@@ -28,12 +29,12 @@ const Login = ({ setToken, setUser }) => {  // Ensure these props are received
         localStorage.setItem("access", access); // Store token in localStorage
 
         // After login, fetch user data
-        const userResponse = await axios.get("http://127.0.0.1:8000/api/profile/", {
+        const userResponse = await axios.get(`${API_SERVER}/api/profile/`, {
           headers: { Authorization: `Bearer ${access}` },
         });
 
         // Log user data for verification
-        console.log("User data:", userResponse.data);
+        //console.log("User data:", userResponse.data);
         setUser(userResponse.data); // Save user info
 
         // Redirect to the dashboard

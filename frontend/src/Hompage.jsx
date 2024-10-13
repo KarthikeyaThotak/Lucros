@@ -7,7 +7,7 @@ import Services from './components/HomePage/Services'
 import Roadmap from './components/HomePage/Roadmap'
 import Footer from './components/HomePage/Footer'
 import ButtonGradient from "./assets/svg/ButtonGradient"
-
+import "./index.css";
 function Hompage() {
     return (
         <>

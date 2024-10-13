@@ -1,5 +1,5 @@
 {
-  "name": "brainwave",
+  "name": "lucros",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,13 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.5.9",
     "axios": "^1.7.7",
+    "chart.js": "^4.4.4",
+    "chartjs-adapter-moment": "^1.0.1",
+    "dotenv": "^16.4.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flatpickr": "^3.10.13",
     "react-icons": "^5.3.0",
     "react-just-parallax": "^3.1.16",
     "react-router-dom": "^6.27.0",
-    "scroll-lock": "^2.1.5"
+    "react-transition-group": "^4.4.5",
+    "scroll-lock": "^2.1.5",
+    "tailwind-config": "^0.1.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -28,6 +35,7 @@
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
+    "parcel": "^2.12.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "vite": "^5.1.0"

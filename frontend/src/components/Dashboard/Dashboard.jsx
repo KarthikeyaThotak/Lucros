@@ -1,18 +1,16 @@
-import React from "react";
+"use client";
+import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
+import Sidebar from './partials/Sidebar';
+import Header from './partials/Header';
+import DashboardCard06 from './partials/dashboard/DashboardCard06';
+import DashboardCard07 from './partials/dashboard/DashboardCard07';
+import DashboardCard09 from './partials/dashboard/DashboardCard09';
+
 const Dashboard = ({ user, setToken, setUser }) => {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const navigate = useNavigate();
-
-  const handleLogout = () => {
-    // Clear the token from localStorage and state
-    localStorage.removeItem("access");
-    setToken(null);
-    setUser(null);
-
-    // Redirect to the login page
-    navigate("/login");
-  };
 
   if (!user) {
     // If there's no user, redirect to login page
@@ -21,18 +19,44 @@ const Dashboard = ({ user, setToken, setUser }) => {
   }
 
   return (
-    <div>
-      <h2>Welcome to Your Dashboard</h2>
+    <div className="flex h-screen overflow-hidden">
 
-      <h3>User Info:</h3>
-      <ul>
-        <li><strong>Username:</strong> {user.username}</li>
-        <li><strong>Email:</strong> {user.email}</li>
-        <li><strong>Full Name:</strong> {user.full_name}</li>
-        {/* Display other user info here */}
-      </ul>
+      {/* Sidebar */}
+      <Sidebar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
 
-      <button onClick={handleLogout}>Log Out</button>
+      {/* Content area */}
+      <div className="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
+
+        {/*  Site header */}
+        <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+
+        <main className="grow">
+          <div className="px-4 sm:px-6 lg:px-8 py-8 w-full max-w-9xl mx-auto">
+
+            {/* Dashboard actions */}
+            <div className="sm:flex sm:justify-between sm:items-center mb-8">
+
+              {/* Left: Title */}
+              <div className="mb-4 sm:mb-0">
+                <h1 className="text-2xl md:text-3xl text-gray-800 dark:text-gray-100 font-bold">Dashboard</h1>
+              </div>
+
+
+            </div>
+
+            {/* Cards */}
+            <div className="grid grid-cols-12 gap-6">
+              <DashboardCard09 />
+              <DashboardCard06 />
+              <DashboardCard07 />
+            </div>
+
+          </div>
+        </main>
+
+        
+
+      </div>
     </div>
   );
 };

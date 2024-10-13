@@ -9,19 +9,21 @@ const Signup = ({ setToken, setUser }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
+
   const navigate = useNavigate(); // Hook for navigation
+
+  const API_SERVER = import.meta.env.VITE_REACT_APP_API_URL;
 
   const handleSignup = async (e) => {
     e.preventDefault();
 
-    // Check if passwords match
     if (password !== confirmPassword) {
       setError("Passwords do not match!");
       return;
     }
 
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/signup/", {
+      const response = await axios.post(`${API_SERVER}/api/signup/`, {
         username,
         email,
         password,
@@ -29,24 +31,20 @@ const Signup = ({ setToken, setUser }) => {
 
       const { access } = response.data;
 
-      // Ensure setToken is a function before calling it
       if (typeof setToken === "function") {
-        setToken(access); // Store the token
+        setToken(access);
       }
-      
+
       localStorage.setItem("access", access);
 
-      // After signup, fetch user data
-      const userResponse = await axios.get("http://127.0.0.1:8000/api/profile/", {
+      const userResponse = await axios.get(`${API_SERVER}/api/profile/`, {
         headers: { Authorization: `Bearer ${access}` },
       });
 
-      // Ensure setUser is a function before calling it
       if (typeof setUser === "function") {
-        setUser(userResponse.data); // Save user info
+        setUser(userResponse.data);
       }
 
-      // Redirect to the dashboard
       navigate("/dashboard");
     } catch (error) {
       setError(error.response?.data?.detail || "Signup failed. Please try again.");
