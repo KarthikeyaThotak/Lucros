@@ -90,6 +90,6 @@ The **Micro-Investing App with AI** helps users make informed, data-driven decis
 
 ---
 ### Preview 📺
-[![Lucros.us Demo](https://i.sstatic.net/XCRlR.png)](https://youtu.be/3kmLu4UJ13A "Lucros.us Demo - Click to Watch!")
+https://www.youtube.com/watch?v=3kmLu4UJ13A
 
 
