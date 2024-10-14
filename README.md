@@ -88,3 +88,8 @@ A **Lucros App** allows users to invest small amounts of money in stocks, bonds,
 
 The **Micro-Investing App with AI** helps users make informed, data-driven decisions by leveraging the power of **AI-powered sentiment analysis** and **stock analysis**. Whether you're a beginner or a seasoned investor, this app provides you with **real-time insights**, **personalized advice**, and **predictive analytics** to grow your wealth over time. Start small, but invest smarter! 🌱💼
 
+---
+### Preview 📺
+[![Lucros.us Demo](https://i.sstatic.net/XCRlR.png)](https://youtu.be/3kmLu4UJ13A "Lucros.us Demo - Click to Watch!")
+
+
